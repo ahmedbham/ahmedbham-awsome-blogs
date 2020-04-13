@@ -11,7 +11,7 @@ description: Blogs about my interests and insights
 # *** If you're not sure what this mean, then leave this section as it is. Only modify the url and baseurl if you know what you're doing!***
 
 # url is the the website domain URL without a trailing slash
-#url: "https://example.com"
+url: https://ahmedbhamaws.net
 
 # baseurl should be an empty string
 #baseurl: ""
@@ -21,10 +21,6 @@ description: Blogs about my interests and insights
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-  Author's home: "http://deanattali.com"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -67,13 +63,13 @@ author:
 # You can reorder the items to define the link order.
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
-  rss: true
-  email: "ahmed.bham@gmail.com"
+# rss: true
+#  email: "ahmed.bham@gmail.com"
 # facebook: deanattali
-  github: ahmedbham
+#  github: ahmedbham
 # twitter: daattali
 #  reddit: yourname
-   linkedin: ahmedbham-solutionsarchitect
+  linkedin: ahmedbham-solutionsarchitect
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -98,10 +94,10 @@ share-links-active:
 # --- Web Statistics Section --- #
 
 # Fill in your Google Analytics gtag.js ID to track your website using gtag
-#gtag: ""
+gtag: "UA-163403238-1"
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+#google_analytics: "UA-163403238-1"
 
 # Google Tag Manager ID
 #gtm: ""
@@ -110,10 +106,10 @@ share-links-active:
 # Uncomment the following section to enable Matomo. The opt-out parameter controls
 # whether or not you want to allow users to opt out of tracking.
 
-#matomo:
-  site_id: "9"
-  uri: "demo.wiki.pro"
-#  opt-out: true
+# matomo:
+#   site_id: "9"
+#   uri: "demo.wiki.pro"
+#   opt-out: true
 
 # --- Comments --- #
 
