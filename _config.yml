@@ -14,7 +14,7 @@ description: Blogs about my interests and insights
 url: https://ahmedbhamaws.net
 
 # baseurl should be an empty string
-#baseurl: ""
+baseurl: ""
 
 # --- Navigation bar options --- #
 
@@ -252,7 +252,7 @@ prose:
 
 plugins:
   - jekyll-paginate
-  - jekyll-sitemap
+#  - jekyll-sitemap
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
