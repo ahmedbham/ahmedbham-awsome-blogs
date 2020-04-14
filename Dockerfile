@@ -1,8 +1,21 @@
-FROM jekyll/jekyll
+FROM jekyll/builder:4.0
 
-COPY --chown=jekyll:jekyll Gemfile .
-COPY --chown=jekyll:jekyll Gemfile.lock .
+LABEL maintainer="SoftInstigate <info@softinstigate.com>"
 
-RUN bundle install --quiet --clean
+RUN apk upgrade --update
+RUN apk add --no-cache python3-dev python3
+RUN pip3 install --upgrade pip setuptools && \
+    pip3 install --upgrade awscli && \
+    if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
+    rm -r /root/.cache
 
-CMD ["jekyll", "serve"]
+RUN gem install bundler
+RUN gem install jekyll-paginate
+RUN gem install jekyll-minifier
+RUN gem install jekyll-sitemap
+    
+RUN aws --version
+RUN ruby --version
+RUN bundler --version
+
+ENTRYPOINT [ "jekyll" ]
