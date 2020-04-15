@@ -13,14 +13,14 @@ RUN gem install bundler -v '2.1.4'
 RUN gem install jekyll-paginate
 RUN gem install jekyll-minifier
     
-ENV GEM_HOME="/usr/local/bundle" 
-ENV BUNDLE_BIN="$GEM_HOME/bin"  
-ENV PATH $BUNDLE_BIN:$PATH
+# ENV GEM_HOME="/usr/local/bundle" 
+# ENV BUNDLE_BIN="$GEM_HOME/bin"  
+# ENV PATH $BUNDLE_BIN:$PATH
 
-RUN mkdir -p "$GEM_HOME" "$BUNDLE_BIN" \
-    && chmod 777 "$GEM_HOME" "$BUNDLE_BIN"
+# RUN mkdir -p "$GEM_HOME" "$BUNDLE_BIN" \
+#     && chmod 777 "$GEM_HOME" "$BUNDLE_BIN"
 
-WORKDIR /usr/site
+# WORKDIR /usr/site
 
 # COPY Gemfile /usr/site/
 # COPY Gemfile.lock /usr/site/

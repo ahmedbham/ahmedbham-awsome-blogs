@@ -6,5 +6,6 @@ phases:
       - bundle install
   build:
     commands:
+      - sudo chown -R $(whoami) /codebuild/output/*
       - bundle exec jekyll build
       - aws s3 sync --delete _site/ s3://ahmedbhamaws.net
