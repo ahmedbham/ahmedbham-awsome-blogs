@@ -9,12 +9,21 @@ RUN pip3 install --upgrade pip setuptools && \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
     rm -r /root/.cache
 
-RUN gem install bundler
+RUN gem install bundler -v '2.1.4'
 RUN gem install jekyll-paginate
 RUN gem install jekyll-minifier
     
-RUN aws --version
-RUN ruby --version
-RUN bundler --version
+ENV GEM_HOME="/usr/local/bundle" 
+ENV BUNDLE_BIN="$GEM_HOME/bin"  
+ENV PATH $BUNDLE_BIN:$PATH
 
-ENTRYPOINT [ "jekyll" ]
+RUN mkdir -p "$GEM_HOME" "$BUNDLE_BIN" \
+    && chmod 777 "$GEM_HOME" "$BUNDLE_BIN"
+
+WORKDIR /usr/site
+
+# COPY Gemfile /usr/site/
+# COPY Gemfile.lock /usr/site/
+
+
+CMD [ "irb" ]
