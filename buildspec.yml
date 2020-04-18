@@ -3,10 +3,15 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "export GEM_HOME=$HOME/gems" >> ~/.bashrc
-      - echo "export PATH=$HOME/gems/bin:$PATH" >> ~/.bashrc
-      - bundle install
+      - echo "entering install phase"
+      # - echo "export GEM_HOME=$HOME/gems" >> ~/.bashrc
+      # - echo "export PATH=$HOME/gems/bin:$PATH" >> ~/.bashrc
+      # - bundle install
   build:
     commands:
-      - bundle exec jekyll build
-      - aws s3 sync --delete _site/ s3://ahmedbhamaws.net
+      #  - echo "${CODEBUILD_SRC_DIR}"
+      # - chown -R $(whoami) $CODEBUILD_SRC_DIR/*
+      -  jekyll build
+      # - echo "ls -al ${CODEBUILD_SRC_DIR}/_site"
+      - aws s3 sync --delete ${CODEBUILD_SRC_DIR}/_site/ s3://ahmedbhamaws.net
+      # - aws s3 sync --delete _site/ s3://ahmedbham-guard-duty-lab

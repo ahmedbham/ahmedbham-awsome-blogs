@@ -12,6 +12,7 @@ RUN pip3 install --upgrade pip setuptools && \
 RUN gem install bundler -v '2.1.4'
 RUN gem install jekyll-paginate
 RUN gem install jekyll-minifier
+
     
 # ENV GEM_HOME="/usr/local/bundle" 
 # ENV BUNDLE_BIN="$GEM_HOME/bin"  
@@ -24,6 +25,11 @@ RUN gem install jekyll-minifier
 
 # COPY Gemfile /usr/site/
 # COPY Gemfile.lock /usr/site/
+
+COPY Gemfile .
+COPY Gemfile.lock .
+
+RUN bundle install
 
 
 CMD [ "irb" ]
