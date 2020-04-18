@@ -3,9 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
+      - echo "export GEM_HOME=$HOME/gems" >> ~/.bashrc
+      - echo "export PATH=$HOME/gems/bin:$PATH" >> ~/.bashrc
       - bundle install
   build:
     commands:
-      - sudo chown -R $(whoami) /codebuild/output/*
       - bundle exec jekyll build
       - aws s3 sync --delete _site/ s3://ahmedbhamaws.net
